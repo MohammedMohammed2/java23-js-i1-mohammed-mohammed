@@ -7,7 +7,7 @@ Name.innerHTML=playerNameTag;
 
 function PigGame(){
 
-    
+
 }
 
 

@@ -19,3 +19,26 @@ display:inline;
 #RoundNumber{
     margin-top: auto;
 }
+#Freeze{
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+#Roll{
+display: flex;
+margin-left: auto;
+margin-right: auto;
+margin-top:100px;
+margin-bottom: auto;
+}
+
+#DiceNumber{
+    display: block;
+    margin-left:280px;
+    margin-right: auto;
+    margin-top:100px;
+    margin-bottom: auto;
+    font-size:100px;
+}
