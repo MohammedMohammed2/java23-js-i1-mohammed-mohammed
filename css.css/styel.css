@@ -1,0 +1,21 @@
+#PlayingField{
+ display: block;
+border-style: solid;
+border-color: black;
+block-size: 500px;
+}
+#TotalScore{
+    display: inline;
+}
+#score{
+display:inline;
+}
+#name{
+    display: inline;
+}
+#Rounds{
+    display:flex;
+}
+#RoundNumber{
+    margin-top: auto;
+}
