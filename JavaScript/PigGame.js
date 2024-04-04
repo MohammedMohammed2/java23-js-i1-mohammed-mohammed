@@ -18,6 +18,7 @@ let roundNumber = document.getElementById('RoundNumber');
 
 let totalScore = 0;
 let totalRounds = 0;
+let currentScoreOfThisRound=0;
 
 function PigGame(event){
     
@@ -39,11 +40,13 @@ function PigGame(event){
     if(diceRoll!=1){
         scoreNumber.innerHTML=addedValue(score);
         roundNumber.innerHTML=totalRounds;
+        
     }
     else
     {
         scoreNumber.innerHTML=totalScore;
-
+        totalRounds=0;
+        roundNumber.innerHTML=totalRounds;
     }
 }
 
