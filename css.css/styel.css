@@ -42,3 +42,7 @@ margin-bottom: auto;
     margin-bottom: auto;
     font-size:100px;
 }
+#ObtainedScore{
+     display: inline;
+     margin-top: auto;
+    }

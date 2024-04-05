@@ -15,10 +15,12 @@ const scoreNumber = document.getElementById('score');
 
 let roundNumber = document.getElementById('RoundNumber');
 
+let scoreOfRound = document.getElementById('ObtainedScore');
+
 
 let totalScore = 0;
 let totalRounds = 0;
-let currentScoreOfThisRound=0;
+let currentScoreOfRound=0;
 
 function PigGame(event){
     
@@ -37,9 +39,19 @@ function PigGame(event){
         return score;
     }
 
+    function addedScorePerRound(){
+        
+        let ObtainedScore=diceRoll+currentScoreOfRound;
+        currentScoreOfRound=ObtainedScore;
+
+       return ObtainedScore;
+    }
+
     if(diceRoll!=1){
         scoreNumber.innerHTML=addedValue(score);
         roundNumber.innerHTML=totalRounds;
+        scoreOfRound.innerHTML=addedScorePerRound(ObtainedScore);
+        console.log(scoreOfRound);
         
     }
     else
@@ -47,6 +59,8 @@ function PigGame(event){
         scoreNumber.innerHTML=totalScore;
         totalRounds=0;
         roundNumber.innerHTML=totalRounds;
+        currentScoreOfRound=0;
+        scoreOfRound.innerHTML=0;
     }
 }
 
