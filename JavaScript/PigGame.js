@@ -3,15 +3,18 @@ const playerNameTag = localStorage.getItem('PlayerName');
 console.log(playerNameTag);
 
 const Name = document.getElementById('name');
-Name.innerHTML=playerNameTag;
+Name.innerHTML = playerNameTag;
 
 const dicePTag = document.getElementById('DiceNumber');
 
 
 const diceNumber = document.getElementById('Roll');
-diceNumber.addEventListener('click',PigGame);
+diceNumber.addEventListener('click', PigGame);
 
-const scoreNumber = document.getElementById('score');
+const freeze = document.getElementById('Freeze');
+
+
+let scoreNumber = document.getElementById('score');
 
 let roundNumber = document.getElementById('RoundNumber');
 
@@ -20,48 +23,51 @@ let scoreOfRound = document.getElementById('ObtainedScore');
 
 let totalScore = 0;
 let totalRounds = 0;
-let currentScoreOfRound=0;
+let currentScoreOfRound = 0;
 
-function PigGame(event){
-    
+function PigGame(event) {
+
     event.preventDefault();
 
-    let diceRoll=Math.ceil(Math.random()*6);
+    let diceRoll = Math.ceil(Math.random() * 6);
 
-    dicePTag.innerHTML=diceRoll;
+    dicePTag.innerHTML = diceRoll;
 
 
-    function addedValue(){
-    
-        let score = totalScore + diceRoll;
-        totalScore=score; 
-        totalRounds++;   
+    function addedScorePerRound() {
+
+        let ObtainedScore = diceRoll + currentScoreOfRound;
+        currentScoreOfRound = ObtainedScore;
+
+        return ObtainedScore;
+    }
+
+    if (diceRoll != 1) {
+        totalRounds++;
+        roundNumber.innerHTML = totalRounds;
+        scoreOfRound.innerHTML = addedScorePerRound(ObtainedScore);
+    }
+    else if(freeze.click){
+        
+    function addedValue() {
+
+        let score = currentScoreOfRound;
+        totalScore = score + currentScoreOfRound;
+
+        scoreOfRound.innerHTML = 0;
+        currentScoreOfRound = 0;
+
         return score;
-    }
 
-    function addedScorePerRound(){
-        
-        let ObtainedScore=diceRoll+currentScoreOfRound;
-        currentScoreOfRound=ObtainedScore;
-
-       return ObtainedScore;
     }
+    scoreNumber.innerHTML=addedValue(score);
 
-    if(diceRoll!=1){
-        scoreNumber.innerHTML=addedValue(score);
-        roundNumber.innerHTML=totalRounds;
-        scoreOfRound.innerHTML=addedScorePerRound(ObtainedScore);
-        console.log(scoreOfRound);
-        
     }
-    else
-    {
-        scoreNumber.innerHTML=totalScore;
-        totalRounds=0;
-        roundNumber.innerHTML=totalRounds;
-        currentScoreOfRound=0;
-        scoreOfRound.innerHTML=0;
+    else {
+        scoreNumber.innerHTML = totalScore;
+        totalRounds = 0;
+        roundNumber.innerHTML = totalRounds;
+        currentScoreOfRound = 0;
+        scoreOfRound.innerHTML = 0;
     }
 }
-
-
