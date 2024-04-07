@@ -70,5 +70,5 @@ freeze.addEventListener('click', function(){
         return totalScore;
 
     }
-    scoreNumber.innerHTML = addedValue();
+    scoreNumber.innerHTML = addedValue(totalScore);
 });
