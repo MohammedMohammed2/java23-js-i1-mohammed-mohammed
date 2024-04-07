@@ -20,18 +20,16 @@ let roundNumber = document.getElementById('RoundNumber');
 
 let scoreOfRound = document.getElementById('ObtainedScore');
 
-
 let totalScore = 0;
 let totalRounds = 0;
 let currentScoreOfRound = 0;
+
 
 function PigGame(event) {
 
     event.preventDefault();
 
     let diceRoll = Math.ceil(Math.random() * 6);
-
-    freeze.addEventListener('click',freezeHandler)
 
     dicePTag.innerHTML = diceRoll;
 
@@ -55,25 +53,22 @@ function PigGame(event) {
         currentScoreOfRound = 0;
         scoreOfRound.innerHTML = 0;
     }
-
-function freezeHandler(){
-
-
+}
+freeze.addEventListener('click', function(){
     function addedValue() {
 
-        let score = currentScoreOfRound;
-        totalScore = score + totalScore;
+        totalScore = currentScoreOfRound + totalScore;
 
         totalRounds = 0;
-        scoreOfRound.innerHTML = 0;
         roundNumber.innerHTML = totalRounds;
+        currentScoreOfRound=0;
+        scoreOfRound.innerHTML=currentScoreOfRound;
+      
 
-        console.log(score);
+        console.log(totalScore);
 
-        return score;
+        return totalScore;
 
     }
-    scoreNumber.innerHTML=addedValue(score);
-
-    }
-}
+    scoreNumber.innerHTML = addedValue();
+});
