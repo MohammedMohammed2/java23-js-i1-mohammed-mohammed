@@ -54,16 +54,17 @@ function PigGame(event) {
         scoreOfRound.innerHTML = 0;
     }
 }
-freeze.addEventListener('click', function(){
+
+freeze.addEventListener('click', function () {
     function addedValue() {
 
         totalScore = currentScoreOfRound + totalScore;
 
         totalRounds = 0;
         roundNumber.innerHTML = totalRounds;
-        currentScoreOfRound=0;
-        scoreOfRound.innerHTML=currentScoreOfRound;
-      
+        currentScoreOfRound = 0;
+        scoreOfRound.innerHTML = currentScoreOfRound;
+
 
         console.log(totalScore);
 
