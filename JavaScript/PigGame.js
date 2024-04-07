@@ -31,6 +31,8 @@ function PigGame(event) {
 
     let diceRoll = Math.ceil(Math.random() * 6);
 
+    freeze.addEventListener('click',freezeHandler)
+
     dicePTag.innerHTML = diceRoll;
 
 
@@ -47,27 +49,31 @@ function PigGame(event) {
         roundNumber.innerHTML = totalRounds;
         scoreOfRound.innerHTML = addedScorePerRound(ObtainedScore);
     }
-    else if(freeze.click){
-        
+    else {
+        totalRounds = 0;
+        roundNumber.innerHTML = totalRounds;
+        currentScoreOfRound = 0;
+        scoreOfRound.innerHTML = 0;
+    }
+
+function freezeHandler(){
+
+
     function addedValue() {
 
         let score = currentScoreOfRound;
-        totalScore = score + currentScoreOfRound;
+        totalScore = score + totalScore;
 
+        totalRounds = 0;
         scoreOfRound.innerHTML = 0;
-        currentScoreOfRound = 0;
+        roundNumber.innerHTML = totalRounds;
+
+        console.log(score);
 
         return score;
 
     }
     scoreNumber.innerHTML=addedValue(score);
 
-    }
-    else {
-        scoreNumber.innerHTML = totalScore;
-        totalRounds = 0;
-        roundNumber.innerHTML = totalRounds;
-        currentScoreOfRound = 0;
-        scoreOfRound.innerHTML = 0;
     }
 }
