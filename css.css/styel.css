@@ -5,6 +5,18 @@
     block-size: 500px;
 }
 
+#registeration{
+  display: block;
+  margin-left: 500px;
+  margin-top: 5px;
+}
+
+#title{
+    display: block;
+    margin-left: 512px;
+    margin-top:200px;
+}
+
 #TotalScore {
     display: inline;
 }

@@ -25,6 +25,7 @@ let totalRounds = 0;
 let currentScoreOfRound = 0;
 
 
+
 function PigGame(event) {
 
     event.preventDefault();
@@ -53,13 +54,13 @@ function PigGame(event) {
         currentScoreOfRound = 0;
         scoreOfRound.innerHTML = 0;
     }
+
 }
 
 freeze.addEventListener('click', function () {
     function addedValue() {
 
         totalScore = currentScoreOfRound + totalScore;
-
         totalRounds = 0;
         roundNumber.innerHTML = totalRounds;
         currentScoreOfRound = 0;
