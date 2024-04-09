@@ -30,10 +30,11 @@
 }
 
 #Rounds {
-    display: flex;
+    display:block;
 }
 
 #RoundNumber {
+    display: inline;
     margin-top: auto;
 }
 
@@ -55,12 +56,9 @@
     margin-right: 50%;
     font-size: 100px;
 }
-
-#GainedScore {
-    display: inline;
+#GainedScore{
+display: inline;
 }
-
 #ObtainedScore {
     display: inline;
-    margin-top: auto;
 }
