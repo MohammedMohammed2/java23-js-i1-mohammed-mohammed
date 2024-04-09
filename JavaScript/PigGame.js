@@ -58,6 +58,7 @@ function PigGame(event) {
 }
 
 freeze.addEventListener('click', function () {
+
     function addedValue() {
 
         totalScore = currentScoreOfRound + totalScore;
@@ -66,11 +67,14 @@ freeze.addEventListener('click', function () {
         currentScoreOfRound = 0;
         scoreOfRound.innerHTML = currentScoreOfRound;
 
-
-        console.log(totalScore);
-
         return totalScore;
 
     }
     scoreNumber.innerHTML = addedValue(totalScore);
+
+    if (totalScore >= 100) {
+        location.reload();
+    }
 });
+
+
