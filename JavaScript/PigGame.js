@@ -1,6 +1,8 @@
 
 const playerNameTag = localStorage.getItem('PlayerName');
 
+const playingField=document.getElementById('PlayingField');
+
 const Name = document.getElementById('name');
 Name.innerHTML = playerNameTag;
 
@@ -75,7 +77,9 @@ freeze.addEventListener('click', function () {
     NumbereOftries++;
 
     if (totalScore >= 100) {
+        
         alert('You won congrats it took you'+' '+NumbereOftries+' '+'Freezes');
+        
         location.reload();
     }
 });
