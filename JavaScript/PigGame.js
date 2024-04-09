@@ -1,6 +1,5 @@
 
 const playerNameTag = localStorage.getItem('PlayerName');
-console.log(playerNameTag);
 
 const Name = document.getElementById('name');
 Name.innerHTML = playerNameTag;
@@ -23,6 +22,7 @@ let scoreOfRound = document.getElementById('ObtainedScore');
 let totalScore = 0;
 let totalRounds = 0;
 let currentScoreOfRound = 0;
+let NumbereOftries=0;
 
 
 
@@ -50,6 +50,7 @@ function PigGame(event) {
     }
     else {
         totalRounds = 0;
+        NumbereOftries++;
         roundNumber.innerHTML = totalRounds;
         currentScoreOfRound = 0;
         scoreOfRound.innerHTML = 0;
@@ -71,8 +72,10 @@ freeze.addEventListener('click', function () {
 
     }
     scoreNumber.innerHTML = addedValue(totalScore);
+    NumbereOftries++;
 
     if (totalScore >= 100) {
+        alert('You won congrats it took you'+' '+NumbereOftries+' '+'Freezes');
         location.reload();
     }
 });
