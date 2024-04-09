@@ -10,6 +10,6 @@ function handleSubmit(event){
 
     localStorage.setItem('PlayerName', playerName);
 
-    window.location.href='PigGame.html';
+    window.location.href='HTML/PigGame.html';
 
 }
