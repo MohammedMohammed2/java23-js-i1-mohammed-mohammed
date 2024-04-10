@@ -9,7 +9,7 @@ function handleSubmit(event){
     const playerName = formEL.querySelector('input').value;
 
     localStorage.setItem('PlayerName', playerName);
-
-    window.location.href='PigGame.html';
+if(playerName != null){
+    window.location.href='PigGame.html';}
 
 }
